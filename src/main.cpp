@@ -136,6 +136,8 @@ DallasTemperature sensors(&oneWire);
 // DeviceAddress R2wire = { 0x28, 0x30, 0x85, 0x96, 0x05, 0x00, 0x00, 0x37 };
 
 
+
+
 DeviceAddress V1wire = { 0x28, 0xBD, 0x18, 0xAE, 0x31, 0x21, 0x03, 0x3F };  // 1
 DeviceAddress R1wire = { 0x28, 0x51, 0x7B, 0xAD, 0x31, 0x21, 0x03, 0xBC };  // 2
 DeviceAddress V2wire = { 0x28, 0x92, 0x4A, 0x80, 0x31, 0x21, 0x03, 0xDE };  // 3
@@ -170,6 +172,7 @@ MQTTClient mqttclient;
 //char serverName[] = "api.pushingbox.com";
 //#pragma endregion ETHERNET
 //elapsedMillis addTime;
+
 
 void mqttpublish(){
   mqttclient.publish("V1", String(V1));
@@ -541,7 +544,7 @@ void setup(){
 	Labl[8] = "MI";
 	analogWrite(6, 250);
 	Serial.println("initialization done.");
-	Serial.print("Chat server address:");
+	Serial.print("Chat ser0ver address:");
 	Serial.println(Ethernet.localIP());
 	//Serial.println("HV;HR;BV;BR;Kessel;Aussen;Brauch;HV SOLL;Pumpe;Mstat;MProzent");
 	digitalWrite(Pumpe, LOW);
